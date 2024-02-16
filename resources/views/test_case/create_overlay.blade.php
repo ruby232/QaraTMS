@@ -7,12 +7,12 @@
             {{--CASE HEADER--}}
             <div class="px-3 py-2 d-flex justify-content-between" style="background: #f4f6f9">
                 <div>
-                    <span class="fs-5">Create Test Case</span>
+                    <span class="fs-5">{{__('Create Test Case')}}</span>
                 </div>
 
                 <div>
                     <button href="button" class="btn btn-outline-dark btn-sm" onclick="closeTestCaseEditor()">
-                        <i class="bi bi-x-lg"></i> <b>Cancel</b>
+                        <i class="bi bi-x-lg"></i> <b>{{__('Cancel')}}</b>
                     </button>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                         <div class="mb-3 d-flex justify-content-start border p-3 bg-light">
 
                             <div>
-                                <label for="test_suite_id" class="form-label"><strong>Test Suite</strong></label>
+                                <label for="test_suite_id" class="form-label"><strong>{{__('Test Suite')}}</strong></label>
                                 <select name="suite_id" id="tce_test_suite_select" class="form-select border-secondary">
 
                                     @foreach($repository->suites as $repoTestSuite)

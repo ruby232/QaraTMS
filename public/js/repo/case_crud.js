@@ -64,8 +64,9 @@ function getTestCaseDataFromForm() {
 function createTestCase(addAnother=false) {
     let newTestCase = getTestCaseDataFromForm();
 
+    $('#test_case_content .title-wrapper').removeClass('was-validated');
     if(!newTestCase.title) {
-        alert('Title is required');
+        $('#test_case_content .title-wrapper').addClass('was-validated');
         return;
     }
 
@@ -102,8 +103,9 @@ function createTestCase(addAnother=false) {
 function updateTestCase() {
     let updatingTestCase = getTestCaseDataFromForm();
 
+    $('#test_case_content .title-wrapper').removeClass('was-validated');
     if(!updatingTestCase.title) {
-        alert('Title is required');
+        $('#test_case_content .title-wrapper').addClass('was-validated');
         return;
     }
 

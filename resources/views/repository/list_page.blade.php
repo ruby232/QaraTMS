@@ -9,11 +9,12 @@
 
         <div class="border-bottom my-3">
             <h3 class="page_title">
-                Repositories
-
+                {{__('Repositories')}}
                 @can('add_edit_repositories')
                     <a class="mx-3" href="{{route("repository_create_page", $project->id)}}">
-                        <button type="button" class="btn btn-sm btn-primary"> <i class="bi bi-plus-lg"></i> Add New</button>
+                        <button type="button" class="btn btn-sm btn-primary"> <i class="bi bi-plus-lg"></i>
+                        {{__('Add New')}}
+                        </button>
                     </a>
                 @endcan
             </h3>
@@ -24,27 +25,26 @@
             @foreach($repositories as $repository)
 
                 <div class="col">
-                    <div class="card base_block border h-100 shadow-sm rounded">
+                    <div class="card h-100">
 
                         <div class="card-body">
-                            <div>
-                                <i class="bi bi-stack"></i>
-                                <a class="fs-4" href="{{ route('repository_show_page', [$project->id, $repository->id]) }}">{{$repository->title}}</a>
-                            </div>
+                            <h4 class="card-title">
+                                <a href="{{ route('repository_show_page', [$project->id, $repository->id]) }}">
+                                    <i class="bi bi-stack"></i>
+                                    {{$repository->title}}</a>
+                            </h4>
 
                             @if($repository->description)
-                                <div class="card-text text-muted">
-                                    <span> {{$repository->description}} </span>
+                                <div class="card-text">
+                                    {{$repository->description}}
                                 </div>
                             @endif
                         </div>
 
-                        <div class="d-flex justify-content-end border-top p-2">
-                            <span class="text-muted">
-                                <b>{{ $repository->suitesCount() }}</b> Test Suites
-                                 | <b>{{ $repository->casesCount() }}</b> Test Cases
-                                  | <b>{{ $repository->automatedCasesCount() }}</b> Automated
-                             </span>
+                        <div class="card-footer">
+                                <b>{{ $repository->suitesCount() }}</b> {{__('Test Suites')}}
+                                 | <b>{{ $repository->casesCount() }}</b> {{__('Test Cases')}}
+                                  | <b>{{ $repository->automatedCasesCount() }}</b> {{__('Automated')}}
                         </div>
 
                     </div>

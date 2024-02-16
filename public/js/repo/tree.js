@@ -125,7 +125,7 @@ function TreeSortable() {
                             <i class="bi bi-folder-plus"></i>
                         </button>
 
-                        <button  id="delete_suite_btn"  type="button" class="button remove-branch" title="Delete" onclick="deleteSuite(${mid ? mid : id})">
+                        <button  id="delete_suite_btn"  type="button" class="button remove-branch btn-danger" title="Delete" onclick="deleteSuite(${mid ? mid : id})">
                             <i class="bi bi-trash3"></i>
                         </button>
                     </div>
